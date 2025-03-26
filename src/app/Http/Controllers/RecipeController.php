@@ -45,7 +45,7 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(int $id)
+    public function show($id)
     {
         try {
             $recipes = Recipe::where('id', $id)->get();
@@ -62,7 +62,7 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRecipeRequest $request, int $id)
+    public function update(UpdateRecipeRequest $request, $id)
     {
         try {
             $update_recipe = Recipe::where('id', $id)
@@ -86,7 +86,7 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(int $id)
+    public function destroy($id)
     {
         try {
             Recipe::where('id', $id)->delete();
