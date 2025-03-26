@@ -15,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/recipes', [RecipeController::class, 'index']);
-Route::post('/recipes', [RecipeController::class, 'store']);
-Route::get('/recipes/{id}', [RecipeController::class, 'show']);
-Route::put('/recipes/{id}', [RecipeController::class, 'update']);
-Route::delete('/recipe/{id}', [RecipeController::class, 'delete']);
+Route::get('/GET recipes', [RecipeController::class, 'index']);
+Route::post('/POST recipes', [RecipeController::class, 'store']);
+Route::get('/GET/{id} recipe', [RecipeController::class, 'show']);
+Route::put('/PATCH/{id} recipe', [RecipeController::class, 'update']);
+Route::delete('/DELETE/{id} recipe', [RecipeController::class, 'delete']);
